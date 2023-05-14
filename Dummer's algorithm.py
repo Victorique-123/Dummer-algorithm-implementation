@@ -58,8 +58,9 @@ def process_array(array, n, k):
     # Convert the result to a NumPy array
     return np.array([list(r) for r in result])
 
-def decoding(arr, D, H, G):
-    k,n = G.shape
+def decoding(arr, D, H):
+    n_k,n = H.shape
+    k=n-n_k
     if np.array_equal(np.mod(np.dot(arr, H.T), 2), np.zeros(n-k)):
       return arr
     else:
