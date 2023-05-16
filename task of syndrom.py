@@ -1,14 +1,8 @@
-import sys
-import random
-import os
-import math
 import numpy as np
-import itertools
-from scipy.special import comb
-from itertools import product
-import time
 from itertools import combinations
+from scipy.special import comb
 from random import choice
+
 
 def get_P_tau(n, t):
     p_and_tau = []
