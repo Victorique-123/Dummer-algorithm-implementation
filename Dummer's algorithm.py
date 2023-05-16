@@ -8,16 +8,6 @@ import math
 import time
 from itertools import combinations
 
-def get_D(n, k, q):
-  Wd = 0
-  D = 0  
-  for i in range(n):
-    Wd += int(np.math.comb(n,i))*np.power(q-1,i)    
-    if Wd >= np.power(q,n-k):
-      D = i
-      break
-  return D
-
 def get_P_tau(n, t):
     p_and_tau = []
     for tau_p in range(t+1):
@@ -58,9 +48,17 @@ def process_array(array, n, k):
     # Convert the result to a NumPy array
     return np.array([list(r) for r in result])
 
-def decoding(arr, D, H):
+def decoding(arr, H):
     n_k,n = H.shape
     k=n-n_k
+    Wd = 0
+    D = 0
+    q = 2 
+    for i in range(n):
+      Wd += int(np.math.comb(n,i))*np.power(q-1,i)    
+      if Wd >= np.power(q,n-k):
+        D = i
+        break
     if np.array_equal(np.mod(np.dot(arr, H.T), 2), np.zeros(n-k)):
       return arr
     else:
