@@ -1,11 +1,7 @@
 import numpy as np
-import numpy as np
 import itertools
 from scipy.special import comb
-from itertools import product
 import random
-import math
-import time
 from itertools import combinations
 
 def get_P_tau(n, t):
