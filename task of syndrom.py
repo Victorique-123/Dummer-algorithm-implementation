@@ -51,7 +51,7 @@ def process_array(array, n, k):
     return np.array([list(r) for r in result])
 
 
-def find_e(s, w, H):
+def find_e(s, w, H): # s- синдром, w-максимальное количество ошибок, H-проверочная матрица
   k,n = H.shape
   c_full=[]
   for t in range(1, w + 1):
