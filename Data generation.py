@@ -47,5 +47,5 @@ def main(n, seed):
     for j in range(n//2):
         line += str(random.randint(0,1))
     s = [int(c) for c in line]
-    H=recover_matrices(half_ht)
+    H=recover_matrices(np.array(half_ht))
     return w,H,s
