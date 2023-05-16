@@ -1,15 +1,7 @@
 #!/usr/bin/env python3.5
-import sys
 import random
-import os
 import math
 import numpy as np
-import itertools
-from scipy.special import comb
-from itertools import product
-import time
-from itertools import combinations
-from random import choice
 
 def dGV(n, k):
     d = 0
